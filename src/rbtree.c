@@ -300,9 +300,17 @@ int rbtree_erase(rbtree* T, node_t* deleting)
     node_t* damaged;
     node_t* color_loser = deleting;
     color_t origin_color = color_loser->color;
-	//편자녀 case 분리
-    if (deleting->left == T->nil)
+    //편자녀 case 분리
+    if (deleting->right == T->nil && deleting->left == T->nil)
     {
+        if (deleting->parent->right == deleting)
+            deleting->parent->right = T->nil;
+        else deleting->parent->left = T->nil;
+        origin_color = RBTREE_RED;
+    }
+    else if (deleting->left == T->nil)
+    {
+
         damaged = deleting->right;
         RB_transplant(T, deleting, damaged);
     }
