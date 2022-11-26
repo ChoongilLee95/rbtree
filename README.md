@@ -1,3 +1,6 @@
+# 팀원들 RB-tree 정리 페이지
+[ITR 기준으로 정리하였습니다](https://www.notion.so/ITR-1196a7a8ceb845c390bebe07871a07cf#b1ce3fdcad56481ab59a4a3bd60f3796)
+
 # Red-Black Tree 구현
 
 Balanced search tree로 많이 쓰이는 Red-black tree (이하 RB tree)를 C 언어로 구현하는 과제입니다.
