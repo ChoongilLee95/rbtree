@@ -294,7 +294,7 @@ static void del_fixup(rbtree* t, node_t* gray)
 }
 
 
-// 삭제 (작업중)
+// 삭제 
 int rbtree_erase(rbtree* T, node_t* deleting)
 {
     node_t* damaged;
@@ -351,11 +351,7 @@ int rbtree_erase(rbtree* T, node_t* deleting)
 }
 
 int rbtree_to_array(const rbtree *t, key_t *arr, const size_t n) {
-  // TODO: implement to_array
-  return 0;
+    // TODO: implement to_array
+    return 0;
 }
 
-int rbtree_to_array(const rbtree *t, key_t *arr, const size_t n) {
-  // TODO: implement to_array
-  return 0;
-}
