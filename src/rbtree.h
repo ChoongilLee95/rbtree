@@ -21,12 +21,19 @@ typedef struct {
 rbtree *new_rbtree(void);
 void delete_rbtree(rbtree *);
 
-node_t *rbtree_insert(rbtree *, const key_t);
-node_t *rbtree_find(const rbtree *, const key_t);
-node_t *rbtree_min(const rbtree *);
-node_t *rbtree_max(const rbtree *);
-int rbtree_erase(rbtree *, node_t *);
 
-int rbtree_to_array(const rbtree *, key_t *, const size_t);
+// 노드 검색
+// 트리 전체의 최소 노드
+node_t* rbtree_min(const rbtree*);
+// 트리 전체의 최대 노드
+node_t* rbtree_max(const rbtree*);
+// key값에 맞는 노드
+node_t* rbtree_find(const rbtree*, const key_t);
+// 노드 삭제
+int rbtree_erase(rbtree*, node_t*);
+// 노드 추가
+node_t* rbtree_insert(rbtree*, const key_t);
+// array화
+int rbtree_to_array(const rbtree*, key_t*, const size_t);
 
 #endif  // _RBTREE_H_
