@@ -10,9 +10,20 @@ rbtree *new_rbtree(void) {
     return p;
 }
 
-void delete_rbtree(rbtree *t) {
-  // TODO: reclaim the tree nodes's memory
-  free(t);
+static void free_all_node_t(rbtree* t, node_t*now)
+{
+    if (now->left != t->nil)
+        free_all_node_t(t, now->left);
+    if (now->right != t->nil)
+        free_all_node_t(t, now->right);
+    free(now);
+}
+
+void delete_rbtree(rbtree* t)
+{
+    if (t->root != t->nil)
+        free_all_node_t(t, t->root);
+    free(t);
 }
 
 
