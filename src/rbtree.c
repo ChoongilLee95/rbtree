@@ -23,6 +23,7 @@ void delete_rbtree(rbtree* t)
 {
     if (t->root != t->nil)
         free_all_node_t(t, t->root);
+    free(t->nil);
     free(t);
 }
 
